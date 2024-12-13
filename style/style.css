@@ -1,88 +1,118 @@
-/* Общие настройки */
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html, body {
-    height: 100%;
-    font-family: 'Afacad+Flux', sans-serif;
-    font-size: 16px;
-    color: #333;
 }
 
 /* Блоки */
-header, nav, div {
+header, nav {
     padding: 0;
+    margin: 0;
+}
+
+div {
+    padding: 0;
+    margin: 0;
+}
+
+/* Текст */
+html, body {
+    height: 100%;
+    font-family: 'Afacad+Flux', sans-serif; /* Подключает Google-шрифт в HTML */
+    font-size: 16px;
+    color: #333;
     margin: 0;
 }
 
 /* Изображения */
 img {
-    width: 100%;
+    width: 50%;
     height: auto;
-    display: block;
-    margin: 0 auto;
+    margin-right: auto; 
 }
 
 /* Таблицы */
 table {
-    width: 100%;
+    width: 40%;
     border-collapse: collapse;
 }
 
 td, th {
     border: 1px solid #ddd;
-    padding: 8px;
 }
 
 /* Ссылки */
 a {
+    margin-right: 20px;
     text-decoration: none;
-    color: #333;
-    transition: color 0.3s ease;
+    font-family: 'Afacad+Flux', sans-serif; 
+    font-size: 20px;
+    color: black;
 }
 
 a:hover {
-    color: #007bff; /* Современный синий для акцента */
+    color: red;
 }
 
 footer {
     width: 100%;
-    background-color: #333;
+    height:auto;
+    background-color: black;
     color: white;
-    padding: 20px 0;
 }
 
 footer a {
-    color: white;
+    color: white; /* Цвет ссылок в футере */
 }
 
 footer a:hover {
-    color: #ccc; /* Более светлый оттенок для акцента */
+    color: lightgray; /* Цвет ссылок в футере при наведении */
 }
 
-/* Навигация */
 nav a {
-    font-size: 16px;
+    text-decoration: none;
+    color:black;
 }
 
-a.active {
+a.active{
     color: tomato;
+    margin-left: 20px; /* Убедитесь, что состояние активной ссылки также имеет отступ слева */
 }
 
-/* Основной контент */
-main {
-    flex-grow: 1;
+main{
+    flex:1;
 }
+@media (min-width: 1px) and (max-width: 400px){
+    body>main>section>table{
+        font-size: 12px;
+    }
+}
+@media (min-width:401px) and (max-width:600px){
+    body>header>h1{
+        text-align: center;
+    }
+    body>header>nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    main.a{
+        font-size: 14px;
+    }
+    body>main>section>img{
+        width: 100%;
+        padding-right: 20px;
+    }
+    body>main>section>table{
+        font-size: 14px;
+    }
+}
+@media (min-width:601px) and (max-width:800px){
+    body>main>section>img{
+        width: 500px;
+        padding-right: 20px;
+    }
+    body>header>nav{
+        display: flex;
+        justify-content: space-between;
+    }
 
-/* Медиазапросы для адаптивности */
-@media (max-width: 600px) {
-   h1, section > h2 {
-       text-align: center; 
-   }
-   nav a {
-       font-size: 18px; 
-   }
 }
