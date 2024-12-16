@@ -1,4 +1,6 @@
-import menu from "./menu-data.js";
+import loadDishes from "./load_dishes.js";
+
+let menu = await loadDishes();
 
 // Сортировка меню по имени
 const sortedMenu = menu.sort((a, b) => a.name.localeCompare(b.name));
@@ -21,7 +23,7 @@ function renderDishes(filteredMenu, categoryId) {
     .map(
       (dish) => `
       <div class="food-elem" data-keyword="${dish.keyword}">
-        <img src="${dish.img}" alt="${dish.name}" />
+        <img src="${dish.image}" alt="${dish.name}" />
         <p>${dish.name}</p>
         <p>${dish.price}₽</p>
         <button class="add_dish">Добавить</button>
@@ -34,22 +36,22 @@ function renderDishes(filteredMenu, categoryId) {
 // Корзина для отслеживания выбранных блюд
 const orderPrice = document.getElementById("order_price");
 
-let basket = {
-    soup: { name: "", price: 0 },
-    main_dish: { name: "", price: 0 },
-    salad_starter: { name: "", price: 0 },
-    juice: { name: "", price: 0 },
-    dessert: { name: "", price: 0 }, // Добавлено поле для десертов
-    price() {
-      return (
-        this.soup.price +
-        this.main_dish.price +
-        this.salad_starter.price +
-        this.juice.price +
-        this.dessert.price // Учитываем цену десертов
-      );
-    },
-  };
+export let basket = {
+  soup: { name: "", price: 0 },
+  main_dish: { name: "", price: 0 },
+  salad_starter: { name: "", price: 0 },
+  juice: { name: "", price: 0 },
+  dessert: { name: "", price: 0 },
+  price() {
+    return (
+      this.soup.price +
+      this.main_dish.price +
+      this.salad_starter.price +
+      this.juice.price +
+      this.dessert.price
+    );
+  },
+};
 
 // Обновление отображения заказа
 function updateOrderDisplay(dish) {
