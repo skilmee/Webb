@@ -20,13 +20,107 @@
             </nav>
         </header>
 
+        <div id="notification" class="hidden">
+            <div class="notification-content">
+              <p id="notification-message"></p>
+              <button id="notification-ok">Окей</button>
+            </div>
+        </div>
+
+        <h2 class="options_title">Доступные для заказа комбо</h2>
+        <div class="options">
+          <div class="lunch_options">
+            <div class="lunch_dish">
+              <img src="/icons/soup2.png" alt="Суп">
+              <p>Суп</p>
+            </div>
+            <div class="lunch_dish">
+              <img src="/icons/main2.png" alt="Главное блюдо">
+              <p>Главное блюдо</p>
+            </div>
+            <div class="lunch_dish">
+              <img src="/icons/salad2.png" alt="Салат">
+              <p>Салат</p>
+            </div>
+            <div class="lunch_dish">
+              <img src="/icons/drink2.png" alt="Напиток">
+              <p>Напиток</p>
+            </div>
+          </div>
+        
+          <div class="lunch_options">
+            <div class="lunch_dish">
+              <img src="/icons/soup2.png" alt="Суп">
+              <p>Суп</p>
+            </div>
+            <div class="lunch_dish">
+              <img src="/icons/main2.png" alt="Главное блюдо">
+              <p>Главное блюдо</p>
+            </div>
+            <div class="lunch_dish">
+              <img src="/icons/drink2.png" alt="Напиток">
+              <p>Напиток</p>
+            </div>
+          </div>
+        
+          <div class="lunch_options">
+            <div class="lunch_dish">
+              <img src="/icons/soup2.png" alt="Суп">
+              <p>Суп</p>
+            </div>
+            <div class="lunch_dish">
+              <img src="/icons/salad2.png" alt="Салат">
+              <p>Салат</p>
+            </div>
+            <div class="lunch_dish">
+              <img src="/icons/drink2.png" alt="Напиток">
+              <p>Напиток</p>
+            </div>
+          </div>
+        
+          <div class="lunch_options">
+            <div class="lunch_dish">
+              <img src="/icons/main2.png" alt="Главное блюдо">
+              <p>Главное блюдо</p>
+            </div>
+            <div class="lunch_dish">
+              <img src="/icons/salad2.png" alt="Салат">
+              <p>Салат</p>
+            </div>
+            <div class="lunch_dish">
+              <img src="/icons/drink2.png" alt="Напиток">
+              <p>Напиток</p>
+            </div>
+          </div>
+          <div class="lunch_options">
+            <div class="lunch_dish">
+                <img src="/icons/main2.png" alt="Главное блюдо">
+              <p>Главное блюдо</p>
+            </div>
+            <div class="lunch_dish">
+              <img src="/icons/drink2.png" alt="Напиток">
+              <p>Напиток</p>
+            </div>
+          </div>
+
+          <!-- Десерт -->
+          <div class="lunch_options desert-option">
+            <div class="lunch_dish desert-item">
+              <img src="/icons/desert2.png" alt="Десерт">
+              <p>Десерт</p>
+              <p class="lunch_dish_text">(Можно добавить к любому заказу)</p>
+            </div>
+          </div>
+        </div>
+        
+    
         <section class="category-container">
             <h2>Выберите суп</h2>
             <div class="filters">
                 <!-- Кнопки фильтров с нужными атрибутами -->
                 <button class="filter_button" data-kind="fish" data-active="false">Рыбный</button>
                 <button class="filter_button" data-kind="meat" data-active="false">Мясной</button>
-                <button class="filter_button" data-kind="vegetarian" data-active="false">Вегетарианский</button>
+                <button class="filter_button" data-kind="veg" data-active="false">Вегетарианский</button>
             </div>
             <!-- Контейнер для отображения блюд категории "супы" -->
             <div id="soup" class="dish category"></div>
@@ -37,9 +131,9 @@
             <div class="filters">
                 <button class="filter_button" data-kind="fish" data-active="false">Рыбное</button>
                 <button class="filter_button" data-kind="meat" data-active="false">Мясное</button>
-                <button class="filter_button" data-kind="vegetarian" data-active="false">Вегетарианское</button>
+                <button class="filter_button" data-kind="veg" data-active="false">Вегетарианское</button>
             </div>
-            <div id="main_dish" class="dish category"></div>
+            <div id="main-course" class="dish category"></div>
         </section>
 
 
@@ -48,9 +142,9 @@
             <div class="filters">
                 <button class="filter_button" data-kind="fish" data-active="false">Рыбное</button>
                 <button class="filter_button" data-kind="meat" data-active="false">Мясное</button>
-                <button class="filter_button" data-kind="vegetarian" data-active="false">Вегетарианское</button>
+                <button class="filter_button" data-kind="veg" data-active="false">Вегетарианское</button>
             </div>
-            <div id="salad_starter" class="dish category"></div>
+            <div id="salad" class="dish category"></div>
         </section>
 
         <section class="category-container">
@@ -60,7 +154,7 @@
                 <button class="filter_button" data-kind="cold" data-active="false">Холодное</button>
                 <button class="filter_button" data-kind="hot" data-active="false">Горячее</button>
             </div>
-            <div id="juice" class="dish category"></div>
+            <div id="drink" class="dish category"></div>
         </section>
 
         <section class="category-container">
@@ -68,8 +162,8 @@
             <div class="filters">
                 <!-- Кнопки фильтров с нужными атрибутами -->
                 <button class="filter_button" data-kind="small" data-active="false">Маленькая порция</button>
-                <button class="filter_button" data-kind="average" data-active="false">Средняя порция</button>
-                <button class="filter_button" data-kind="big" data-active="false">Большая порция</button>
+                <button class="filter_button" data-kind="medium" data-active="false">Средняя порция</button>
+                <button class="filter_button" data-kind="large" data-active="false">Большая порция</button>
             </div>
             <div id="dessert" class="dish category"></div>
         </section>
@@ -158,6 +252,8 @@
             <p>Позвонить нам <a href="tel:+70000000000">+7-000-000-00-00</a></p>
         </footer>
     </div>
+    <script type="module" src="notifications.js"></script>
     <script type="module" src="displayDishes.js"></script>
+    <script type="module" src="load_dishes.js"></script>
 </body>
 </html>
