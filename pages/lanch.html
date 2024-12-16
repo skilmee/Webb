@@ -1,93 +1,74 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Собрать ланч</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style/style.css">
-    <link rel="stylesheet" href="/style/style_lanch.css">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Собрать ланч</title>
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="/style/style.css">
+ <link rel="stylesheet" href="/style/style_lanch.css">
 </head>
 <body>
-<div class="menu">
-<header>
-<h1>Food Construct</h1>
-<nav>
-<a href="/index.html">О нас</a>
-<a href="/pages/lanch.html" class="active">Собрать ланч</a>
-<a href="#order">Заказы</a>
-<a href="#contacts">Контакты</a>
-</nav>
-</header>
+ <div class="menu">
+ <header>
+ <h1>Food Construct</h1>
+ <nav>
+ <a href="/index.html">О нас</a>
+ <a href="/pages/lanch.html" class="active">Собрать ланч</a>
+ <a href="#order">Заказы</a>
+ <a href="#contacts">Контакты</a>
+ </nav>
+ </header>
 
-<div id="notification" class="hidden">
-<div class="notification-content">
-<p id="notification-message"></p>
-<button id="notification-ok">Окей</button>
-</div>
-</div>
+ <div id="notification" class="hidden">
+ <div class="notification-content">
+ <p id="notification-message"></p>
+ <button id="notification-ok">Окей</button>
+ </div>
+ </div>
 
-<h2 class="options_title">Доступные для заказа комбо</h2>
+ <h2 class="options_title">Доступные для заказа комбо</h2>
 
-<div class="options">
-<!-- Ваши блюда и их изображения -->
-<!-- Пример -->
-<div class="lunch_options">
-<div class="lunch_dish">
-<img src="/icons/soup2.png" alt="Суп">
-<p>Суп</p>
-</div>
-<!-- Другие блюда -->
-</div>
+ <div class="options">
+ <!-- Пример блюд -->
+ <div class="lunch_options">
+ <div class="lunch_dish">
+ <img src="/icons/soup2.png" alt="Суп">
+ <p>Суп</p>
+ </div>
+ <!-- Другие блюда -->
+ </div>
 
-<section class="category-container">
-<h2>Выберите суп</h2>
-<div class="filters">
-<button class="filter_button" data-kind="fish" data-active="false">Рыбный</button>
-<button class="filter_button" data-kind="meat" data-active="false">Мясной</button>
-<button class="filter_button" data-kind="veg" data-active="false">Вегетарианский</button>
-</div>
-<div id="soup" class="dish category"></div>
-</section>
+ <!-- Категории -->
+ <section class="category-container">
+ <h2>Выберите суп</h2>
+ <div class="filters">
+ <button class="filter_button" data-kind="fish" data-active="false">Рыбный</button>
+ <button class="filter_button" data-kind="meat" data-active="false">Мясной</button>
+ <button class="filter_button" data-kind="veg" data-active="false">Вегетарианский</button>
+ </div>
+ <div id="soup" class="dish category"></div>
+ </section>
 
-<!-- Другие категории -->
+ <!-- Другие категории аналогично -->
 
-<section id="checkout-panel" style="display:none; position: sticky; top: 0; background-color: white; padding: 10px;">
-<p>Текущая стоимость заказа: <span id="current-price">0₽</span></p>
-<a id="checkout-link" href="/pages/order.html" class="disabled">Перейти к оформлению</a>
-</section>
+ <!-- Панель для оформления заказа -->
+ <section id="checkout-panel" style="display:none;">
+ <p>Текущая стоимость заказа:<span id="current-price">0₽</span></p>
+ <a id="checkout-link" href="/pages/order.html" class="disabled">Перейти к оформлению</a>
+ </section>
 
-<section id="order">
-<h2>Сделать заказ</h2>
-<form action="#" method="post">
-<!-- Данные формы -->
-<div id="soup_order" class="order-elem"><p class="order-type-name">Суп</p><p class="order-type-description"></p><input type="hidden" name="soup"></div>
-<!-- Другие элементы заказа -->
-<div id="order_price" class="order-elem"><p class="order-type-name">Стоимость заказа</p><p class="order-type-description"></p><input type="hidden" name="price"></div>
+ </div>
 
-<label for="comments">Комментарии к заказу</label>
-<textarea id="comments" name="comments"></textarea>
+ <!-- Заказ -->
+ <section id="order">
+ <!-- Форма оформления заказа -->
+ </section>
 
-<div> 
-<legend>Ваши данные</legend> 
-<label for="name">Имя</label> 
-<input type="text" id="name" name="name" required> 
-<label for="email">Email</label> 
-<input type="email" id="email" name="email" required> 
-<label for="phone">Номер телефона</label> 
-<input type="tel" id="phone" name="phone" required> 
-<label for="">Адрес доставки:</label> 
-<input type='text' id='address' name='address' required />
-<p><i>Доставка осуществляется только по Москве.</i></p>
-
-<div class='button-containers'>
-<button type='reset'>Сбросить</button>
-<button type='submit'>Отправить</button>
-</div>
+ </footer id='contacts'>
+<p>Позвонить нам<a href='tel:+70000000000'>+7-000-000-00-00</a></p></footer></body></html>
 
 <script type='module' src='notifications.js'></script>
 <script type='module' src='displayDishes.js'></script>
 <script type='module' src='load_dishes.js'></script>
 
-<footer id='contacts'>
-<p>Позвонить нам <a href='tel:+70000000000'>+7-000-000-00-00</a></p></footer></div></body></html>
