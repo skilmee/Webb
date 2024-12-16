@@ -1,329 +1,227 @@
-section>div {
+section > div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-left: 40px;
     gap: 10px;
-
 }
-section>div>div{
+
+section > div > div {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    flex:1 1 300px;
+    flex-wrap: wrap; /* Добавлено для поддержки обёртки */
+    flex: 1 1 300px; /* Установлено для адаптивности */
     align-items: center;
-    gap: 15px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 40px;
-    padding-right: 50px;
+    gap: 15px; /* Увеличен отступ между элементами */
+    padding: 30px 50px; /* Упрощено определение отступов */
     border-radius: 35px;
     filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
-    cursor:pointer;
-    background-color: white;
-    justify-content: space-between; /*Распределяет кнопки равномерно */
-    
+    cursor: pointer;
+    background-color: white; /* Добавлен фон */
 }
-h2{
-    margin-left: 40px;
+
+h2 {
+    margin-left: 40px; 
 }
-section>div>div>p{
-    line-height: 1;
+
+section > div > div > p {
+    line-height: 1; 
 }
-section>div>div:hover{
-    border: 2px solid tomato;
+
+section > div > div:hover {
+    border: 2px solid tomato; 
 }
-section>div>div>button:hover{
-    background-color: lightgray;
+
+section > div > div > button:hover {
+    background-color: lightgray; 
 }
-section>div>div>img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: auto;
-    border-radius: 35px;
+
+section > div > div img {
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 100%; 
+    height: auto; 
+    border-radius: 35px; 
 }
-.price{
+
+.price, .name {
     font-size: 20px;
     padding: 0;
-    margin:0
+    margin: 0; /* Убраны отступы для единообразия */
 }
-.name{
-    font-size:20px;
-    padding: 0;
-    margin: 0;
+
+.weight {
+    color: grey;
+    margin-top: 10px; /* Исправлено на корректный отступ */
 }
-.weight{
-    color:grey;
-    padding: 0;
-    margin: 10;
-}
-section>div>div>button{
-    background-color: #f1eee9;
-    border-color: #f1eee9;
+
+section > div > div button { 
+    background-color: #f1eee9; 
+    border-radius: 10px; 
+    cursor:pointer; 
     margin-top: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    border-radius: 10px;
-    cursor: pointer;
+    padding: 10px 30px; /* Упрощено определение отступов */
 }
 
-
-#order {
-    display: flex;
-    flex-direction: column;
+#order { 
+    display:flex; 
+    flex-direction: column; /* Изменено на колонку для лучшего выравнивания */
     justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
-}
-form {
-    width: 80%;
-    max-width: 800px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-}
-label {
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="time"],
-textarea,
-select {
-    width: 100%;
-    height: 35px;
-    font-size: 14px;
-    padding: 8px;
-    display: block;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    align-items:center; 
+    font-family:"Arial", sans-serif; 
 }
 
-textarea {
-    height: 70px;
-}
-.button-containers {
-    display: flex;
-    justify-content: center; 
-    gap: 10px; 
-}
-
-button {
-    padding: 10px 20px; 
-    font-size: 16px; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer;
-    transition: background-color 0.3s ease; 
+form { 
+    width :80%; 
+    max-width :800px; 
+    display:grid ; 
+    grid-template-columns :1fr 1fr ; 
+    grid-gap :20px ; 
 }
 
-button[type="reset"] {
-    background-color: #f44336; 
-    color: white; 
+label { 
+    font-size :14px ; 
+    margin-bottom :10px ; 
 }
 
-button[type="reset"]:hover {
-    background-color: #d32f2f; 
+input[type="text"], input[type="email"], input[type="tel"], input[type="time"], textarea, select { 
+    width :100%; 
+    height :35px ; 
+    font-size :14px ; 
+    padding :8px ; 
+    display:block ; 
+    margin-bottom :10px ; 
+    border :1px solid #ccc ; 
+    border-radius :4px ; 
 }
 
-button[type="submit"] {
-    background-color: #4CAF50; 
-    color: white; 
-}
+textarea { height :70px ; }
 
-button[type="submit"]:hover {
-    background-color: #388E3C; 
-}
+.button-containers { display:flex ; justify-content:center ; gap :10px ; }
 
-legend {
-    font-weight: bold;
-    margin-bottom: 10px;
-    padding-left: 0;
-}
-.order-elem {
-    display: none;
-}
-.order-type-name {
-    font-weight: bold;
-}
-.category {
-    margin-bottom: 20px;
-  }
-  .filters {
-    margin-top: 10px;
-  }
-  .filter-button {
-    margin-right: 10px;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  .filter-button:hover {
-    background-color: #f0f0f0;
-  }
-  /* Базовый стиль кнопок */
+button { padding :10px 20px ; font-size :16px ; border:none ; border-radius :5px ; cursor:pointer ; transition :background-color .3s ease ; }
+
+button[type="reset"] { background-color:#f44336;color:white;}
+
+button[type="reset"]:hover { background-color:#d32f2f;}
+
+button[type="submit"] { background-color:#4CAF50;color:white;}
+
+button[type="submit"]:hover { background-color:#388E3C;}
+
+legend { font-weight:bold;margin-bottom :10px;padding-left :0;}
+
+.order-elem { display:none;}
+
+.order-type-name { font-weight:bold;}
+
+.category { margin-bottom :20px;}
+
+.filters { margin-top :10px;}
+
+.filter-button { margin-right :10px;padding :5px 10px;cursor:pointer;}
+
+.filter-button:hover { background-color:#f0f0f0;}
+
 .filter_button {
-    background-color: #f0f0f0; /* Светло-серый фон */
-    color: #333; /* Темный текст */
-    border: 1px solid #ccc; /* Граница */
-    border-radius: 5px; /* Скругленные углы */
-    padding: 10px 15px; /* Внутренние отступы */
-    cursor: pointer; /* Указатель мыши при наведении */
-    transition: background-color 0.3s, color 0.3s; /* Плавный переход цвета */
-  }
-  
-  /* Цвет кнопки при наведении курсора */
-  .filter_button:hover {
-    background-color: #e0e0e0; /* Темнее основной фон */
-  }
-  
-  /* Активное состояние кнопки (когда фильтр применяется) */
-  .filter_button.active_button {
-    background-color: #f44336; /* Синий фон */
-    color: white; /* Белый текст */
-  }
-  
-  /* При наведении на активную кнопку (активный фильтр) */
-  .filter_button.active_button:hover {
-    background-color: #d32f2f; /* Темно-синий фон */
-  }
+   background-color:#f0f0f0;color:#333;border-radius :5px;padding :10px 15px;cursor:pointer;transition :background-color .3s,color .3s;
+}
+.filter_button:hover { background-color:#e0e0e0;}
+.filter_button.active_button { background-color:#f44336;color:white;}
+.filter_button.active_button:hover { background-color:#d32f2f;}
 
-  .options {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 3rem;
-    grid-row-gap: 3rem;
-    padding: 3rem 0;
-    gap: 20px;
-    justify-items: center;
-    font-size: 1.1rem; /* Уменьшенный размер текста */
-  }
-  
-  .lunch_options {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .lunch_dish {
-    text-align: center;
-  }
-  .desert-option {
-    margin-top: 20px; /* Отступ для десерта */
-  }
-  
-  .desert-item {
-    text-align: center;
-  }
-  
-  .lunch_dish_text {
-    font-size: 12px; /* Размер текста для десерта */
-    color: gray; /* Цвет текста для дополнительного пояснения */
-  }
-  .lunch_dish img {
-    width: 70px; /* Размер иконок */
-    height: auto;
-    transition: transform 0.3s ease; /* Плавный переход */
-  }
+.options {
+   display:grid;
+   grid-template-columns:repeat(3,1fr);
+   grid-column-gap:3rem;
+   grid-row-gap:3rem;
+   padding:3rem 0;
+   gap:20px;
+   justify-items:center;
+   font-size:1.1rem;
+}
 
-  .lunch_dish img:hover {
-    transform: translateY(-10px) scale(1.2); /* Подъем вверх и увеличение */
-  }
-  .options_title {
-    text-align: center;
-  }
+.lunch_options {
+   display:flex;
+   align-items:center;
+   gap:10px;
+}
 
+.lunch_dish, .desert-item {
+   text-align:center;
+}
 
+.desert-option {
+   margin-top:20px;
+}
 
-  /* CSS */
+.lunch_dish_text {
+   font-size:12px;color:gray;
+}
+
+.lunch_dish img {
+   width:70px;height:auto;
+   transition:transform .3s ease;
+}
+.lunch_dish img:hover {
+   transform:translateY(-10px) scale(1.2);
+}
+.options_title {
+   text-align:center;
+}
+
+/* CSS для уведомлений */
 .hidden {
-  display: none;
+   display:none;
 }
 
 #notification {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #f8f9fa; /* Светло-серый фон */
-  border-radius: 8px; /* Закругленные углы */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Мягкая тень */
-  border: 2px solid #000;
-  padding: 20px;
-  width: 300px; /* Фиксированная ширина для консистентности */
-  z-index: 1000;
+   position:fixed;
+   top:50%;
+   left:50%;
+   transform:translate(-50%,-50%);
+   background-color:#f8f9fa;border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,.1);
+   border:2px solid #000;padding:20px;width:300px;z-index:1000;
 }
 
 .notification-content {
-  text-align: center;
+   text-align:center;
 }
 
 #notification-message {
-  font-size: 16px; /* Увеличенный шрифт для читаемости */
-  color: #343a40; /* Темно-серый текст */
+   font-size:16px;color:#343a40;
 }
 
 #notification-ok {
-  margin-top: 15px;
-  padding: 10px;
-  background-color: #28a745; /* Зеленый цвет кнопки */
-  color: white;
-  border: none;
-  border-radius: 5px; /* Закругленные углы кнопки */
-  cursor: pointer;
+   margin-top:15px;padding:10px;background-color:#28a745;color:white;border:none;border-radius:5px;cursor:pointer;
 }
-
 #notification-ok:hover {
-  background-color: #218838; /* Темнее зеленый при наведении */
+   background-color:#218838;
 }
 
-  
-
-
-
-
- @media (min-width: 1px) and (max-width:799px){
-    h1 {
-        text-align: center;                  
-    }
-
-    section>div>div{
-        display: flex;                      
-        flex-direction: column;              
-        align-items: center; 
-    }
-    
-
-    nav > a {
-        font-size: 20px;                    
-    }
-    
-    section > h2 {
-        text-align: center;                 
-    }
-    
-
-    section > div {
-        display: grid;                       
-        grid-template-columns: 1fr;                
-    }
+/* Медиа-запросы */
+@media (min-width: 1px) and (max-width:799px) {
+   h1 { text-align:center; }
+   
+   section>div>div{
+       display:flex;                      
+       flex-direction:column;              
+       align-items:center;  
+   }
+   
+   nav > a { font-size:20px; }
+   
+   section > h2 { text-align:center; }
+   
+   section > div { display:grid; grid-template-columns:1fr; }
 } 
 
-@media (min-width: 800px){
-    section>div>div{
-        display: flex;                       
-        justify-content: space-between;  
-        align-items: baseline;      
-    }
+@media (min-width:800px) {
+   section>div>div{
+       display:flex;                       
+       justify-content:space-between;  
+       align-items:center;      
+   }
 
-    section>div{
-        display: grid;                       
-        grid-template-columns: repeat(3, 1fr); 
-    }
-} 
+   section>div{ display:grid; grid-template-columns:repeat(3,1fr); }
+}
