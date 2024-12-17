@@ -53,6 +53,31 @@ export let basket = {
   },
 };
 
+// Функция для сохранения текущего состояния корзины в localStorage
+function saveBasketToLocalStorage() {
+    const basketData = {
+        soup: basket.soup.name ? basket.soup : null,
+        main_dish: basket.main_dish.name ? basket.main_dish : null,
+        salad_starter: basket.salad_starter.name ? basket.salad_starter : null,
+        juice: basket.juice.name ? basket.juice : null,
+        dessert: basket.dessert.name ? basket.dessert : null,
+    };
+    localStorage.setItem("basket", JSON.stringify(basketData));
+}
+
+// Функция для загрузки корзины из localStorage
+function loadBasketFromLocalStorage() {
+    const savedBasket = JSON.parse(localStorage.getItem("basket"));
+    if (savedBasket) {
+        Object.keys(savedBasket).forEach((key) => {
+            if (savedBasket[key]) {
+                basket[key] = savedBasket[key];
+                updateOrderDisplay({ category: key, ...savedBasket[key] });
+            }
+        });
+    }
+}
+
 // Обновление отображения заказа
 function updateOrderDisplay(dish) {
   const orderElem = document.getElementById(`${dish.category}_order`);
@@ -77,6 +102,7 @@ document.addEventListener("click", (event) => {
     if (dish) {
       basket[dish.category] = { name: dish.name, price: dish.price };
       updateOrderDisplay(dish);
+      saveBasketToLocalStorage(); // Сохраняем изменения в localStorage
     }
   }
 });
@@ -111,6 +137,9 @@ document.querySelectorAll(".filter_button").forEach((filterButton) => {
     });
   });
 });
+
+// Загрузка состояния корзины при старте страницы
+loadBasketFromLocalStorage();
 
 // Отображение всех блюд при загрузке страницы
 renderAllCategories(sortedMenu);
