@@ -8,9 +8,10 @@
   <style>
     /* Общие стили */
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Roboto', sans-serif;
       line-height: 1.6;
-      color: #333;
+      color: #222;
+      background-color: #f9f9f9;
     }
     h1, h2, h3 {
       font-weight: bold;
@@ -20,183 +21,63 @@
     }
 
     /* Hero Section */
-    .hero {
-      background-color: #f8f9fa;
-      padding: 100px 0;
+    .parallax {
+      background-image: url('/images/food.png');
+      height: 100vh;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: white;
+    }
+    .parallax::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .parallax .container {
+      position: relative;
       text-align: center;
     }
-    .hero h1 {
+    .parallax h1 {
       font-size: 3rem;
       margin-bottom: 20px;
     }
-    .hero p {
+    .parallax p {
       font-size: 1.2rem;
       margin-bottom: 30px;
-      color: #555;
     }
-    .hero .btn-primary {
+    .parallax a {
       padding: 10px 30px;
       border-radius: 25px;
+      background-color: #ff5722;
+      color: white;
+      border: none;
+      transition: background-color 0.3s ease-in-out;
+    }
+    .parallax a:hover {
+      background-color: #e64a19;
     }
 
     /* Features Section */
-    .features {
+    #features {
       padding: 60px 0;
+      background-color: #ffffff;
     }
-    .features h2 {
+    #features h2 {
       text-align: center;
       margin-bottom: 40px;
+      font-size: 2rem;
+      color: #333333;
     }
-    .feature-card {
-      border: none;
-      background-color: #f8f9fa;
-      padding: 20px;
-      border-radius: 10px;
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-    .feature-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Call to Action Section */
-    .cta {
-      background-color: #007bff;
-      color: white;
-      padding: 60px 0;
-      text-align: center;
-    }
-    .cta a {
-      color: white;
-      background-color: #0056b3;
-      padding: 10px 30px;
-      border-radius: 25px;
-    }
-
-    /* Contact Section */
-    .contact {
-      padding: 60px 0;
-    }
-    .contact h2 {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .form-control,
-    .btn-submit {
-      border-radius: 20px;
-    }
-    .btn-submit {
-      background-color: #007bff;
-      color: white;
-      padding: 10px 30px;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #f8f9fa;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #777;
-    }
-  </style>
-</head>
-<body>
-
-<!-- Hero Section -->
-<section class="hero">
-  <div class="container">
-    <h1>Доставка Бизнес-Ланчей</h1>
-    <p>Вкусные и полезные обеды для вашего офиса. Быстро, удобно и всегда свежо!</p>
-    <a href="#features" class="btn btn-primary">Узнать больше</a>
-  </div>
-</section>
-
-<!-- Features Section -->
-<section id="features" class="features">
-  <div class="container">
-    <h2>Наши Преимущества</h2>
-    <div class="row g-4">
-      
-      <div class="col-md-4">
-        <div class="feature-card text-center p-4">
-          <h3>Скорость</h3>
-          <p>Быстрая доставка прямо к вашему офису.</p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="feature-card text-center p-4">
-          <h3>Качество</h3>
-          <p>Только свежие и натуральные продукты.</p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="feature-card text-center p-4">
-          <h3>Удобство</h3>
-          <p>Простой процесс заказа и гибкие опции.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Call to Action Section -->
-<section class="cta">
-  <div class="container">
-    <h2>Готовы попробовать?</h2>
-    <p>Соберите свой идеальный ланч прямо сейчас!</p>
-    <a href="./lanch.html" class="btn">Собрать ланч</a>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="contact bg-light">
-  <div class="container">
-    <h2>Свяжитесь с нами</h2>
     
-    <!-- Contact Form -->
-    <form class="row g-3 mt-4">
-      
-      <!-- Name -->
-      <div class="col-md-6">
-        <input type="text" class="form-control" placeholder="Ваше имя" required>
-      </div>
-
-      <!-- Email -->
-      <div class="col-md-6">
-        <input type="email" class="form-control" placeholder="Ваш email" required>
-      </div>
-
-      <!-- Message -->
-      <div class="col-12">
-        <textarea rows="5" class="form-control" placeholder="Ваше сообщение"></textarea>
-      </div>
-
-      <!-- Submit Button -->
-      <div class="col-12 text-center mt-3">
-        <button type="submit" class="btn btn-submit">Отправить сообщение</button>
-      </div>
-
-    </form>
-
-    <!-- Contact Info -->
-    <div class="text-center mt-4">
-        <p>Email: info@businesslunch.com</p>
-        <p>Телефон: +7 (495) 123-45-67</p>
-     </div>
-
-   </div>
-</section>
-
-<!-- Footer -->
-<footer>
-   ©2024 Доставка Бизнес-Ланчей. Все права защищены.
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
+.feature-card{
+background:#f9
