@@ -146,8 +146,15 @@
   <div class="container">
     <h2>Соберите свой идеальный ланч!</h2>
     <p>Перейдите на страницу конструктора и выберите свои любимые блюда.</p>
-    <a href="/constructor.html" class="btn btn-primary btn-lg mt-3">Собрать ланч</a>
-  </div>
+
+     <!-- Обновленная кнопка -->
+     <a href="#" id="build-lunch-btn" class="btn btn-primary btn-lg mt-3">Собрать ланч</a>
+
+     <!-- Сообщение об успешной отправке -->
+     <div id="success-message" style="display:none;" class="mt-4 text-success">Ланч успешно собран!</div>
+
+   </div>
+
 </section>
 
 <!-- Contact Form Section -->
@@ -182,10 +189,17 @@
 
 <!-- Footer -->
 <footer>
-  &copy; 2024 Бизнес Ланчи. Все права защищены.
+ &copy; Бизнес Ланчи Все права защищены.
 </footer>
 
-<!-- Bootstrap JS -->
+<script>
+// Пример обработки клика
+document.getElementById('build-lunch-btn').addEventListener('click', function () {
+   // Показать сообщение об успешной операции
+   document.getElementById('success-message').style.display = 'block';
+});
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
