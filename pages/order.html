@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="lunch.html">Собрать ланч</a>
+            <a href="order_history.html">Заказы</a>
+            <a href="order.html" class="active">Оформить заказ</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="order-summary">
+            <h2>Состав заказа</h2>
+            <div id="order-items"></div>
+            <p id="no-items-message" style="display: none;">Ничего не выбрано. Чтобы добавить блюда в заказ, перейдите на страницу <a href="lunch.html">Собрать ланч</a>.</p>
+        </section>
+
+        <section id="order-form">
+            <h2>Оформление заказа</h2>
+            <form id="submit-order-form">
+                <!-- Поля формы -->
+                <label for="full-name">ФИО:</label>
+                <input type="text" id="full-name" name="full_name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="delivery-address">Адрес доставки:</label>
+                <input type="text" id="delivery-address" name="delivery_address" required>
+
+                <label for="delivery-type">Тип доставки:</label>
+                <select id="delivery-type" name="delivery_type">
+                    <option value="now">Сейчас</option>
+                    <option value="by_time">Ко времени</option>
+                </select>
+
+                <div id="time-input-container" style="display: none;">
+                    <label for="delivery-time">Время доставки:</label>
+                    <input type="time" id="delivery-time" name="delivery_time">
+                </div>
+
+                <label for="comment">Комментарий:</label>
+                <textarea id="comment" name="comment"></textarea>
+
+                <!-- Кнопка отправки -->
+                <button type="submit">Отправить</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="order.js"></script>
+</body>
+</html>
