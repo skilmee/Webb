@@ -22,6 +22,7 @@ function checkOrder() {
   // Получаем текущий набор блюд из корзины
   const selectedDishes = {
     soup: basket.soup.name !== "",
+<<<<<<< HEAD
     "main-course": basket["main-course"].name !== "",
     salad: basket.salad.name !== "",
     drink: basket.drink.name !== "",
@@ -49,6 +50,32 @@ function checkOrder() {
 
     if (!selectedDishes.drink) {
       return "Выберите напиток";
+=======
+    main_dish: basket.main_dish.name !== "",
+    salad_starter: basket.salad_starter.name !== "",
+    juice: basket.juice.name !== "",
+    dessert: basket.dessert.name !== ""
+  };
+
+ // Логика проверки на соответствие одному из вариантов ланча
+ if (!selectedDishes.soup && !selectedDishes.main_dish && !selectedDishes.salad_starter && !selectedDishes.juice && !selectedDishes.dessert) {
+    return "Ничего не выбрано. Выберите блюда для заказа";
+  }
+  if (selectedDishes.dessert && !selectedDishes.soup && !selectedDishes.main_dish && !selectedDishes.salad_starter && !selectedDishes.juice) {
+    return "Только десерт заказать нельзя. Выберите другие блюда.";
+  }
+  if (!selectedDishes.juice) {
+    return "Выберите напиток";
+  }
+  if (selectedDishes.soup && !selectedDishes.main_dish && !selectedDishes.salad_starter) {
+    return "Выберите главное блюдо/салат/стартер";
+  }
+  if (selectedDishes.salad_starter && (!selectedDishes.soup || !selectedDishes.main_dish)) {
+    return "Выберите суп или главное блюдо";
+  }
+  if (!selectedDishes.main_dish) {
+    return "Выберите главное блюдо";
+>>>>>>> parent of c31a3a2 (Update notifications.js)
   }
   
     // Если выбран суп, но не выбраны главное блюдо или салат
@@ -76,6 +103,7 @@ function checkOrder() {
   }
   
 
+<<<<<<< HEAD
 // Обработчик отправки формы
 document.querySelector("form").addEventListener("submit", (event) => {
   const errorMessage = checkOrder();
@@ -87,4 +115,22 @@ document.querySelector("form").addEventListener("submit", (event) => {
 });
 
 
+=======
+  // Если все условия соблюдены, возвращаем null
+  return null;
+}
+
+
+
+// Обработчик отправки формы
+document.querySelector("form").addEventListener("submit", (event) => {
+  const errorMessage = checkOrder();
+  
+  if (errorMessage) {
+    event.preventDefault(); // Отменяем отправку формы
+    showNotification(errorMessage); // Показываем уведомление
+  }
+});
+
+>>>>>>> parent of c31a3a2 (Update notifications.js)
   
