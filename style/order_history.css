@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header nav a {
+    margin-right: 10px;
+}
+
+header nav a.active {
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+.order {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.order p {
+    margin: 5px 0;
+}
+
+.actions button {
+    margin-right: 10px;
+}
