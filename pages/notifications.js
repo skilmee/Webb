@@ -22,7 +22,6 @@ function checkOrder() {
   // Получаем текущий набор блюд из корзины
   const selectedDishes = {
     soup: basket.soup.name !== "",
-<<<<<<< HEAD
     "main-course": basket["main-course"].name !== "",
     salad: basket.salad.name !== "",
     drink: basket.drink.name !== "",
@@ -50,7 +49,6 @@ function checkOrder() {
 
     if (!selectedDishes.drink) {
       return "Выберите напиток";
-=======
     main_dish: basket.main_dish.name !== "",
     salad_starter: basket.salad_starter.name !== "",
     juice: basket.juice.name !== "",
@@ -75,7 +73,6 @@ function checkOrder() {
   }
   if (!selectedDishes.main_dish) {
     return "Выберите главное блюдо";
->>>>>>> parent of c31a3a2 (Update notifications.js)
   }
   
     // Если выбран суп, но не выбраны главное блюдо или салат
@@ -102,8 +99,6 @@ function checkOrder() {
     return null;
   }
   
-
-<<<<<<< HEAD
 // Обработчик отправки формы
 document.querySelector("form").addEventListener("submit", (event) => {
   const errorMessage = checkOrder();
@@ -114,8 +109,6 @@ document.querySelector("form").addEventListener("submit", (event) => {
   }
 });
 
-
-=======
   // Если все условия соблюдены, возвращаем null
   return null;
 }
@@ -132,5 +125,5 @@ document.querySelector("form").addEventListener("submit", (event) => {
   }
 });
 
->>>>>>> parent of c31a3a2 (Update notifications.js)
+
   
