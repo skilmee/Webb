@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const loadDishes = async () => {
   let response = await fetch('https://edu.std-900.ist.mospolytech.ru/labs/api/dishes');
   let menu = await response.json();
@@ -7,8 +6,6 @@ const loadDishes = async () => {
 
 export default loadDishes;
   
-  
-=======
 const dishes = [
   {
       img: "/images/soups/gazpacho.jpg",
@@ -281,7 +278,5 @@ const dishes = [
       kind: "average"
     }
 ];
-
-
 export default dishes;
->>>>>>> parent of 9eb4205 (Update menu-data.js)
+
