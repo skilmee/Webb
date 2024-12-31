@@ -1,275 +1,151 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Собрать ланч</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style/style.css">
-    <link rel="stylesheet" href="/style/style_lanch.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бизнес-ланчи</title>
+  <!-- Подключение Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Основные цвета */
+    :root {
+      --primary-color: #2C3E50; /* Темный синий */
+      --secondary-color: #34495E; /* Глубокий серый */
+      --accent-color: #1ABC9C; /* Бирюзовый */
+      --light-color: #ECF0F1; /* Светлый серый */
+      --text-color: #2C3E50; /* Основной текст */
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--light-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--light-color);
+      padding: 100px 0;
+    }
+
+    .hero-section h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .hero-section img {
+      max-width: 300px;
+    }
+
+    .features-section h2,
+    .cta-section h2,
+    .contact-form-section h2 {
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    .features-section .border {
+      border-color: var(--accent-color);
+    }
+
+    .features-section .p-3 {
+      background-color: var(--light-color);
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .features-section .p-3:hover {
+      transform: translateY(-10px);
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+      color: var(--light-color);
+    }
+
+    .btn-primary {
+      background-color: var(--accent-color);
+      border: none;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--secondary-color);
+    }
+
+    .btn-light {
+      background-color: var(--light-color);
+      border: 1px solid var(--accent-color);
+      color: var(--primary-color);
+    }
+
+    .btn-light:hover {
+      background-color: var(--accent-color);
+      color: var(--light-color);
+    }
+
+    .contact-form-section {
+      background-color: var(--secondary-color);
+      color: var(--light-color);
+    }
+
+    .contact-form-section label {
+      color: var(--light-color);
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: var(--light-color);
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
 </head>
 <body>
-    <div class="menu">
-        <header>
-            <h1>Food Construct</h1>
-            <nav>
-              <a href="/index.html">О нас</a>
-              <a href="/pages/lanch.html" class="active">Собрать ланч</a>
-              <a href="#order">Заказы</a>
-              <a href="#contacts">Контакты</a>
-          </nav>
-        </header>
 
-        <div id="notification" class="hidden">
-            <div class="notification-content">
-              <p id="notification-message"></p>
-              <button id="notification-ok">Окей</button>
-            </div>
+<!-- Hero Section -->
+<section class="hero-section text-center">
+  <div class="container">
+    <h1 class="display-4">Доставка бизнес-ланчей</h1>
+    <p class="lead">Свежие и вкусные обеды прямо в ваш офис!</p>
+    <img src="/images/food2.png" alt="Бизнес-ланчи" class="img-fluid rounded mt-4">
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Наши преимущества</h2>
+    <div class="row text-center">
+      <div class="col-md-4 mb-4">
+        <div class="p-3 border rounded">
+          <h3>Свежие продукты</h3>
+          <p>Мы используем только натуральные ингредиенты.</p>
         </div>
-
-        <h2 class="options_title">Доступные для заказа комбо</h2>
-        <div class="options">
-          <div class="lunch_options">
-            <div class="lunch_dish">
-              <img src="/icons/soup2.png" alt="Суп">
-              <p>Суп</p>
-            </div>
-            <div class="lunch_dish">
-              <img src="/icons/main2.png" alt="Главное блюдо">
-              <p>Главное блюдо</p>
-            </div>
-            <div class="lunch_dish">
-              <img src="/icons/salad2.png" alt="Салат">
-              <p>Салат</p>
-            </div>
-            <div class="lunch_dish">
-              <img src="/icons/drink2.png" alt="Напиток">
-              <p>Напиток</p>
-            </div>
-          </div>
-        
-          <div class="lunch_options">
-            <div class="lunch_dish">
-              <img src="/icons/soup2.png" alt="Суп">
-              <p>Суп</p>
-            </div>
-            <div class="lunch_dish">
-              <img src="/icons/main2.png" alt="Главное блюдо">
-              <p>Главное блюдо</p>
-            </div>
-            <div class="lunch_dish">
-              <img src="/icons/drink2.png" alt="Напиток">
-              <p>Напиток</p>
-            </div>
-          </div>
-        
-          <div class="lunch_options">
-            <div class="lunch_dish">
-              <img src="/icons/soup2.png" alt="Суп">
-              <p>Суп</p>
-            </div>
-            <div class="lunch_dish">
-              <img src="/icons/salad2.png" alt="Салат">
-              <p>Салат</p>
-            </div>
-            <div class="lunch_dish">
-              <img src="/icons/drink2.png" alt="Напиток">
-              <p>Напиток</p>
-            </div>
-          </div>
-        
-          <div class="lunch_options">
-            <div class="lunch_dish">
-              <img src="/icons/main2.png" alt="Главное блюдо">
-              <p>Главное блюдо</p>
-            </div>
-            <div class="lunch_dish">
-              <img src="/icons/salad2.png" alt="Салат">
-              <p>Салат</p>
-            </div>
-            <div class="lunch_dish">
-              <img src="/icons/drink2.png" alt="Напиток">
-              <p>Напиток</p>
-            </div>
-          </div>
-          <div class="lunch_options">
-            <div class="lunch_dish">
-                <img src="/icons/main2.png" alt="Главное блюдо">
-              <p>Главное блюдо</p>
-            </div>
-            <div class="lunch_dish">
-              <img src="/icons/drink2.png" alt="Напиток">
-              <p>Напиток</p>
-            </div>
-          </div>
-
-          <!-- Десерт -->
-          <div class="lunch_options desert-option">
-            <div class="lunch_dish desert-item">
-              <img src="/icons/desert2.png" alt="Десерт">
-              <p>Десерт</p>
-              <p class="lunch_dish_text">(Можно добавить к любому заказу)</p>
-            </div>
-          </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="p-3 border rounded">
+          <h3>Быстрая доставка</h3>
+          <p>Доставляем обеды за 30 минут.</p>
         </div>
-        
-    
-        <section class="category-container">
-            <h2>Выберите суп</h2>
-            <div class="filters">
-                <!-- Кнопки фильтров с нужными атрибутами -->
-                <button class="filter_button" data-kind="fish" data-active="false">Рыбный</button>
-                <button class="filter_button" data-kind="meat" data-active="false">Мясной</button>
-                <button class="filter_button" data-kind="veg" data-active="false">Вегетарианский</button>
-            </div>
-            <!-- Контейнер для отображения блюд категории "супы" -->
-            <div id="soup" class="dish category"></div>
-        </section>
-            
-        <section class="category-container">
-            <h2>Выберите основное блюдо</h2>
-            <div class="filters">
-                <button class="filter_button" data-kind="fish" data-active="false">Рыбное</button>
-                <button class="filter_button" data-kind="meat" data-active="false">Мясное</button>
-                <button class="filter_button" data-kind="veg" data-active="false">Вегетарианское</button>
-            </div>
-            <div id="main-course" class="dish category"></div>
-        </section>
-
-
-        <section class="category-container">
-            <h2>Выберите салат или стартер</h2>
-            <div class="filters">
-                <button class="filter_button" data-kind="fish" data-active="false">Рыбное</button>
-                <button class="filter_button" data-kind="meat" data-active="false">Мясное</button>
-                <button class="filter_button" data-kind="veg" data-active="false">Вегетарианское</button>
-            </div>
-            <div id="salad" class="dish category"></div>
-        </section>
-
-        <section class="category-container">
-            <h2>Выберите Напиток</h2>
-            <div class="filters">
-                <!-- Кнопки фильтров с нужными атрибутами -->
-                <button class="filter_button" data-kind="cold" data-active="false">Холодное</button>
-                <button class="filter_button" data-kind="hot" data-active="false">Горячее</button>
-            </div>
-            <div id="drink" class="dish category"></div>
-        </section>
-
-        <section class="category-container">
-            <h2>Выберите Десерт</h2>
-            <div class="filters">
-                <!-- Кнопки фильтров с нужными атрибутами -->
-                <button class="filter_button" data-kind="small" data-active="false">Маленькая порция</button>
-                <button class="filter_button" data-kind="medium" data-active="false">Средняя порция</button>
-                <button class="filter_button" data-kind="large" data-active="false">Большая порция</button>
-            </div>
-            <div id="dessert" class="dish category"></div>
-        </section>
-            <section id="order">
-                <h2>Сделать заказ</h2>
-                <form action="https://httpbin.org/post" method="post">
-                    <div class="form-block">
-                        <div class="form-block-wrapper">
-                            <legend>Ваш заказ</legend>
-                           
-                            <div id="soup_order" class="order-elem">
-                                <p class="order-type-name">Суп</p>
-                                <p class="order-type-description"></p>
-                                <input class="order-type-description" type="hidden" name="soup">
-                            </div>
-
-                            <label for="soup">
-                              <div>
-                                <b><p>Суп</p></b>
-                                <p id="no_soup">Блюдо не выбрано</p>
-                                <input id="order_soup_value" type="hidden" name="order_soup" value="">
-                              </div>
-                            </label>
-                            <label for="main_dish">
-                              <div>
-                                <b><p>Главное блюдо</p></b>
-                                <p id="no_main-course">Блюдо не выбрано</p>
-                                <input id="order_main-course_value" type="hidden" name="order_main-course" value="">
-                              </div>
-                            </label>
-                            <label for="salad_starter">
-                              <div>
-                                <b><p>Салат/стартер</p></b>
-                                <p id="no_salad">Блюдо не выбрано</p>
-                                <input id="order_salad_value" type="hidden" name="order_salad" value="">
-                              </div>
-                            </label>
-                            <label for="drink">
-                              <div>
-                                <b><p>Напиток</p></b>
-                                <p id="no_drink">Напиток не выбран</p>
-                                <input id="order_drink_value" type="hidden" name="order_drink" value="">
-                              </div>
-                            </label>
-                            <label for="dessert">
-                              <div>
-                                <b><p>Десерт</p></b>
-                                <p id="no_dessert">Десерт не выбран</p>
-                                <input id="order_dessert_value" type="hidden" name="order_dessert" value="">
-                              </div>
-                            </label>
-                            <div id="order_price" class="order-elem">
-                                <p class="order-type-name">Стоимость заказа</p>
-                                <p class="order-type-description"></p>
-                                <input class="order-type-description" type="hidden" name="price">
-                            </div>
-                        </div>
-                        
-                        <label for="comments">Комментарии к заказу</label>
-                        <textarea id="comments" name="comments"></textarea>
-                    </div>
-                    <div>
-                        <legend>Ваши данные</legend>
-                        <label for="name">Имя</label>
-                        <input type="text" id="name" name="name" required>
-                        
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                        
-                        <input type="checkbox" id="subscribe" name="subscribe" checked>
-                        <label for="subscribe">Получать информацию о скидках и акциях</label>
-                        
-                        <br>
-                        
-                        <label for="phone">Номер телефона</label>
-                        <input type="tel" id="phone" name="phone" required>
-                        
-                        <label for="address">Адрес доставки</label>
-                        <input type="text" id="address" name="address" required>
-                        
-                        <p><i>Доставка осуществляется только по Москве.</i></p>
-                        
-                        <p>Время доставки:</p>
-                        <input type="radio" id="asap" name="delivery_time" value="asap" required>
-                        <label for="asap">Как можно скорее</label>
-                        
-                        <input type="radio" id="specific_time" name="delivery_time" value="specific_time" required>
-                        <label for="specific_time">К указанному времени</label>
-                        
-                        <input type="time" id="time_input" name="time_input" min="07:00" max="23:00" step="300">
-
-                        <div class="button-containers">
-                            <button type="reset">Сбросить</button>
-                            <button type="submit">Отправить</button>
-                        </div>
-                    </div>
-                </form>
-            </section>
-        </main>
-        
-        <footer id="contacts">
-            <p>Позвонить нам <a href="tel:+70000000000">+7-000-000-00-00</a></p>
-        </footer>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="p-3 border rounded">
+          <h3>Гибкое меню</h3>
+          <p>Выбирайте блюда на свой вкус.</p>
+        </div>
+      </div>
     </div>
-    <script type="module" src="notifications.js"></script>
-    <script type="module" src="displayDishes.js"></script>
-    <script type="module" src="load_dishes.js"></script>
-</body>
-</html>
+  </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section text-center py-5">
+  <div class="container">
+    <h2>Соберите свой идеальный ланч!</h2>
+    <p>Перейдите на страницу конструктора и выберите свои любимые блюда.</p>
+    <a href="/constructor.html" class="btn btn-primary btn-lg mt-3">Собрать ланч</a>
+  </div>
+</section>
