@@ -125,21 +125,21 @@ button {
 }
 
 button[type="reset"] {
-    background-color: #f44336; 
+    background-color: #f49236; 
     color: white; 
 }
 
 button[type="reset"]:hover {
-    background-color: #d32f2f; 
+    background-color: #b65f12; 
 }
 
 button[type="submit"] {
-    background-color: #4CAF50; 
+    background-color: #3599bd; 
     color: white; 
 }
 
 button[type="submit"]:hover {
-    background-color: #388E3C; 
+    background-color: #1a638e; 
 }
 
 legend {
@@ -185,13 +185,13 @@ legend {
   
   /* Активное состояние кнопки (когда фильтр применяется) */
   .filter_button.active_button {
-    background-color: #f44336; /* Синий фон */
+    background-color: #f49236; /* Оранжевый фон */
     color: white; /* Белый текст */
   }
   
   /* При наведении на активную кнопку (активный фильтр) */
   .filter_button.active_button:hover {
-    background-color: #d32f2f; /* Темно-синий фон */
+    background-color: #b65f12; /* Темно-оранжевый фон */
   }
 
   .options {
@@ -229,7 +229,7 @@ legend {
   .lunch_dish img {
     width: 70px; /* Размер иконок */
     height: auto;
-    transition: transform 0.3s ease; /* Плавный переход */
+    
   }
 
   .lunch_dish img:hover {
@@ -272,7 +272,7 @@ legend {
 #notification-ok {
   margin-top: 15px;
   padding: 10px;
-  background-color: #28a745; /* Зеленый цвет кнопки */
+  background-color: #3599bd; /* Голубоц цвет кнопки */
   color: white;
   border: none;
   border-radius: 5px; /* Закругленные углы кнопки */
@@ -280,14 +280,10 @@ legend {
 }
 
 #notification-ok:hover {
-  background-color: #218838; /* Темнее зеленый при наведении */
+  background-color: #1a638e; /* Темнее голубой при наведении */
 }
 
   
-
-
-
-
  @media (min-width: 1px) and (max-width:799px){
     h1 {
         text-align: center;                  
